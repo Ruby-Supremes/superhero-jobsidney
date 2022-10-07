@@ -5,6 +5,6 @@ class ApplicationController < ActionController::API
         render json: {
             status_code:status_code,
             message:message,
-            body:body},seriaizer: serializer,status: status_code
+            body:body},serializer: serializer,status: status_code
     end
 end
