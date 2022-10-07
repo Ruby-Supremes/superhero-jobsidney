@@ -17,11 +17,11 @@ class PowersController < ApplicationController
     def update
         power=Power.find_by(id: params[:id])
         if power
-            newPower=power.update!(power_params)
-            if newPower.valid?
-                render json: newPower, status: :accepted
+            
+            if power.update(power_params)
+                render json: power, status: :accepted
             else
-                render json:{ error: newPower.errors.full_messages}
+                render json:{ error: power.errors.full_messages}
             end
         else
             render json: {error:  "Power not found"}, status: :not_found
