@@ -9,6 +9,7 @@ class HerosController < ApplicationController
     def show
         hero=Hero.find_by(id:params[:id])
             render json: hero, status: :ok
-
     end
+
+
 end
